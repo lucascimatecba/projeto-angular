@@ -1,0 +1,25 @@
+.bg-image-container {
+  background-image: url('../../assets/ranger.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+.custom-card {
+  width: 60%; /* ou 90%, se quiser mais largo */
+  min-height: 400px;
+  background-color: rgba(255, 255, 255, 0.475); /* branco translúcido */
+  backdrop-filter: blur(6px); /* efeito fosco (opcional) */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* sombra leve */
+  border: solid 3px #d6d6d6ba;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+.card-title {
+  font-weight: 500;
+  font-size: 16px;
+}
+.card-header {
+  border: 1px solid #27272779;
+  border-radius: 0.5rem;
+  font-size: 15px;
+}
