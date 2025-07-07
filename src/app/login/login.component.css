@@ -1,0 +1,23 @@
+.top-logo-container {
+  padding: 1rem 0 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.col-12, .col-lg-7, .col-lg-5 {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.form-custom {
+  width: 75%;
+  margin-bottom: 10%;
+}
+
+.login-custom {
+  background-color: #f5f5f5;
+}
+
+.h1 {
+  color: rgb(19, 47, 159);
+  font-size: 22px;
+}
