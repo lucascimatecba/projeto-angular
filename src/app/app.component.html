@@ -1,1 +1,6 @@
-<app-home></app-home>
+<div class="app-container">
+  <app-cabecalho *ngIf="showHeader$ | async"></app-cabecalho>
+  <div class="main-content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
