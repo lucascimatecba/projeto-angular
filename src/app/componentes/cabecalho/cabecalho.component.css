@@ -1,12 +1,11 @@
-/* Estilos para o Sidebar Menu */
 .sidebar-menu {
   position: fixed;
   top: 0;
-  left: -280px; /* Largura do menu, começa fora da tela */
+  left: -280px;
   width: 280px;
   height: 100%;
-  background-color: white; /* Fundo do menu AGORA É BRANCO */
-  color: #343a40; /* Cor do texto dentro do menu para contraste */
+  background-color: white;
+  color: #343a40;
   padding: 20px;
   transition: all 0.3s ease-in-out;
   z-index: 1040;
@@ -14,6 +13,19 @@
 
   &.active {
     left: 0;
+  }
+
+  .logout-btn {
+    position: absolute;
+    right: 1rem;
+    top: 0.75rem;
+    z-index: 1050;
+    font-size: 14px;
+    padding: 0.4rem 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
   }
 
   .sidebar-logo-container {
