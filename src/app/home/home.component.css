@@ -16,9 +16,10 @@
   border-radius: 0.5rem;
   padding: 2rem;
 }
-.card-title {
+.custom-title {
   font-weight: 500;
   font-size: 16px;
+  color: #214381f4;
 }
 .card-header {
   border: 1px solid #27272779;
