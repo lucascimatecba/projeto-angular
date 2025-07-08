@@ -1,1 +1,21 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <button class="navbar-toggler me-auto" type="button" (click)="toggleMenu()" aria-controls="sidebarMenu" [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
 
+<div class="sidebar-menu" [class.active]="isMenuOpen" id="sidebarMenu">
+  <div class="sidebar-header">
+    <button type="button" class="btn-close" aria-label="Close" (click)="toggleMenu()"></button>
+  </div>
+  <ul class="list-unstyled components">
+    <li><a routerLink="/home" (click)="toggleMenu()">Home</a></li>
+    <li><a routerLink="/sobre" (click)="toggleMenu()">Sobre</a></li>
+    <li><a routerLink="/servicos" (click)="toggleMenu()">Serviços</a></li>
+    <li><a routerLink="/contato" (click)="toggleMenu()">Contato</a></li>
+  </ul>
+</div>
+
+<div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
