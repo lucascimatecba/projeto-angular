@@ -16,15 +16,27 @@
     left: 0;
   }
 
+  .sidebar-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  .sidebar-logo {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
   .sidebar-header {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
 
-    /* Ajuste para o botão de fechar em fundo branco */
     .btn-close {
-      color: #343a40; /* Cor do "X" do botão de fechar no fundo branco */
-      opacity: 0.8; /* Ajuste de opacidade para o "X" */
+      color: #343a40;
+      opacity: 0.8;
 
       &:hover {
         opacity: 1;
@@ -42,21 +54,20 @@
       a {
         display: block;
         padding: 10px 15px;
-        color: #343a40; /* Cor dos links do menu para contraste */
+        color: #343a40;
         text-decoration: none;
         font-size: 1.1em;
         transition: all 0.3s;
 
         &:hover {
-          background-color: rgba(0, 0, 0, 0.1); /* Fundo sutil ao passar o mouse */
-          color: #28a745; /* Cor de destaque verde (mesma do hambúrguer) */
+          background-color: rgba(0, 0, 0, 0.1);
+          color: #224a94;
         }
       }
     }
   }
 }
 
-/* Estilos para o Overlay */
 .overlay {
   position: fixed;
   top: 0;
@@ -75,26 +86,23 @@
   }
 }
 
-/* Estilo para desabilitar o scroll do body quando o menu está aberto */
 body.menu-open {
   overflow: hidden;
 }
 
-/* --- ESTILOS PARA O BOTÃO HAMBÚRGUER VERDE --- */
 .navbar-toggler {
-  border-color: #28a745; /* Cor da borda do hambúrguer verde */
+  border-color: #1a376cf4;
 
   .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2328a745' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23214381f4' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
 }
 .my-custom-navbar {
-  background-color: white !important; /* Fundo do header AGORA É BRANCO */
+  background-color: white !important;
   .navbar-toggler {
-    border-color: #28a745; /* Borda do hambúrguer verde */
+    border-color: #1a376cf4;
 
     .navbar-toggler-icon {
-      /* Ajuste o SVG para o hambúrguer ficar verde no fundo branco */
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%2328a745' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
   }
