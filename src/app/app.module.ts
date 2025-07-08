@@ -9,9 +9,10 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { LoginComponent } from './login/login.component';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -52,9 +53,11 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
 
     MatFormFieldModule,
+    MatInputModule,
     MatIconModule,
     MatButtonModule,
     MatCheckboxModule
