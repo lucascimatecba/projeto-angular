@@ -21,3 +21,10 @@
   color: rgb(19, 47, 159);
   font-size: 22px;
 }
+
+::ng-deep .mat-form-field-outline {
+  border-radius: 10px !important;
+}
+.rounded-form-field .mat-input-element {
+  border-radius: 10px;
+}
