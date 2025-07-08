@@ -9,7 +9,7 @@
 }
 
 .form-custom {
-  width: 75%;
+  width: 80%;
   margin-bottom: 10%;
 }
 
@@ -27,4 +27,14 @@
 }
 .rounded-form-field .mat-input-element {
   border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+  .login-custom {
+    min-height: 100vh;
+    background-color: #f5f5f5;
+  }
+  .form-custom {
+    width: 90%;
+  }
 }
