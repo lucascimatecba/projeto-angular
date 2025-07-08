@@ -7,14 +7,19 @@
 </nav>
 
 <div class="sidebar-menu" [class.active]="isMenuOpen" id="sidebarMenu">
+
   <div class="sidebar-header">
     <button type="button" class="btn-close" aria-label="Close" (click)="toggleMenu()"></button>
   </div>
+
+  <div class="sidebar-logo-container">
+    <img src="../../../assets/ford.png" alt="Logo Ford" class="sidebar-logo">
+  </div>
+
   <ul class="list-unstyled components">
     <li><a routerLink="/home" (click)="toggleMenu()">Home</a></li>
-    <li><a routerLink="/sobre" (click)="toggleMenu()">Sobre</a></li>
-    <li><a routerLink="/servicos" (click)="toggleMenu()">Serviços</a></li>
-    <li><a routerLink="/contato" (click)="toggleMenu()">Contato</a></li>
+    <li><a routerLink="/dashboard" (click)="toggleMenu()">Dashboard</a></li>
+    <li><a (click)="toggleMenu()">Logout</a></li>
   </ul>
 </div>
 
