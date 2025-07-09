@@ -1,0 +1,110 @@
+.dashboard-container {
+  min-height: 100vh;
+  overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card.small-card {
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+.card.small-card h6 {
+  color: #003366;
+  font-weight: 700;
+}
+
+.card.small-card:hover {
+  transform: scale(1.02);
+}
+
+.table-responsive {
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+.card-header-dark {
+  background-color: #d4d4d4;
+  padding: 0.5rem 0;
+  border-radius: 0.75rem 0.75rem 0 0;
+  margin: -1rem -1rem 1rem -1rem;
+}
+.custom-card {
+  border: 1px solid #a9aaaa;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+}
+.custom-card:hover {
+  transform: scale(1.02);
+}
+.custom-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--cor-fonte-sec-dashboard);
+}
+.custom-number{
+  font-size: 25px;
+  font-weight: 600;
+  color: #3780eefb;
+}
+.custom-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--cor-fonte-sec-dashboard);
+}
+.form-select {
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.table-header-custom {
+  background-color: #00285f;
+  color: white;
+}
+.responsive-table td {
+  background-color: white;
+  color: black;
+}
+@media (max-width: 768px) {
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table,
+  .responsive-table tbody,
+  .responsive-table tr,
+  .responsive-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .responsive-table tr {
+    margin-bottom: 1rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+  }
+
+  .responsive-table td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    position: relative;
+    background-color: white;
+    color: black;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #00285f;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .responsive-table td:last-child {
+    border-bottom: none;
+  }
+}
