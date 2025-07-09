@@ -16,4 +16,11 @@ export class CabecalhoComponent {
       document.body.classList.remove('menu-open');
     }
   }
+
+  logout() {
+  // Aqui pode limpar dados, tokens etc.
+  console.log('Logout clicado');
+  // Redirecionar, por exemplo:
+  // this.router.navigate(['/login']);
+}
 }

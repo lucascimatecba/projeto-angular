@@ -1,19 +1,19 @@
 <div class="container-fluid text-center">
   <div class="row d-flex flex-column flex-lg-row min-vh-100 justify-content-center">
 
-    <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center">
+    <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center d-none d-lg-flex">
       <img class="w-100 img-fluid mt-md-3" src="../../assets/ranger.png" alt="ford ranger">
     </div>
 
     <div class="col-12 col-lg-6 d-flex flex-column login-custom">
       <div class="top-logo-container justify-content-center">
-        <img class="w-25 img-fluid mb-md-3" src="../../assets/ford.png" alt="logo da ford">
+        <img class="w-25 img-fluid mb-md-3 pt-5 logo-custom" src="../../assets/ford.png" alt="logo da ford">
       </div>
-      <div class="form-wrapper d-flex flex-grow-1 align-items-center justify-content-center">
+      <div class="form-wrapper d-flex flex-grow-1 align-items-center justify-content-center pb-5">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-custom">
           <h1 class="h1 mb-4">Boas vindas</h1>
 
-          <div class="mb-4">
+          <div class="mb-3">
             <mat-form-field appearance="outline" class="w-100 rounded-form-field">
               <mat-icon matPrefix>person</mat-icon>
               <mat-label>Email</mat-label>
@@ -21,7 +21,7 @@
             </mat-form-field>
           </div>
 
-          <div class="mb-4">
+          <div class="mb-3">
             <mat-form-field appearance="outline" class="w-100 rounded-form-field">
               <mat-icon matPrefix>lock</mat-icon>
               <mat-label>Senha</mat-label>

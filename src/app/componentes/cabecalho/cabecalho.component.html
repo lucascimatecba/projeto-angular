@@ -3,6 +3,11 @@
     <button class="navbar-toggler me-auto" type="button" (click)="toggleMenu()" aria-controls="sidebarMenu" [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <button class="btn btn-outline-danger logout-btn d-flex align-items-center gap-2" (click)="logout()">
+    <mat-icon>logout</mat-icon>
+    <span>Sair</span>
+  </button>
   </div>
 </nav>
 
@@ -20,7 +25,6 @@
     <li><a routerLink="/home" (click)="toggleMenu()">Home</a></li>
     <li><a routerLink="/dashboard" (click)="toggleMenu()">Dashboard</a></li>
     <li><a routerLink="/login" (click)="toggleMenu()">Login</a></li>
-    <li><a (click)="toggleMenu()">Logout</a></li>
   </ul>
 </div>
 
