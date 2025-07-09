@@ -4,5 +4,6 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 :root {
-  --cor-fonte-sec-dashboard: #777777
+  --cor-fonte-sec-dashboard: #777777;
+  --cor-azul-dashboard: #3780eefb;
 }
