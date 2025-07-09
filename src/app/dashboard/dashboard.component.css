@@ -84,10 +84,6 @@
     color: #a0a0a0; /* cinza claro */
   }
 
-  .custom-title-table {
-    background-color: var(--cor-azul-dashboard);
-  }
-
   .responsive-table thead {
     display: none;
   }
@@ -128,5 +124,11 @@
 
   .responsive-table td:last-child {
     border-bottom: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .custom-title-table {
+    background-color: var(--cor-azul-dashboard);
   }
 }
