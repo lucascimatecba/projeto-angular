@@ -45,13 +45,14 @@
 .custom-number{
   font-size: 25px;
   font-weight: 600;
-  color: #3780eefb;
+  color: var(--cor-azul-dashboard);
 }
 .custom-text {
   font-size: 16px;
   font-weight: 500;
   color: var(--cor-fonte-sec-dashboard);
 }
+
 .form-select {
   border-radius: 8px;
   padding: 0.5rem;
@@ -66,6 +67,27 @@
   color: black;
 }
 @media (max-width: 768px) {
+  .custom-title {
+    font-size: 16px
+  }
+  .custom-text {
+    font-size: 13px;
+  }
+  .custom-number {
+    font-size: 22px;
+  }
+  .custom-option {
+    font-size: 13px;
+    text-align: start;
+  }
+  option:disabled {
+    color: #a0a0a0; /* cinza claro */
+  }
+
+  .custom-title-table {
+    background-color: var(--cor-azul-dashboard);
+  }
+
   .responsive-table thead {
     display: none;
   }
