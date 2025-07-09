@@ -12,11 +12,12 @@
           <h3 class="custom-title pt-3">Veículo</h3>
         </div>
         <div class="card-body d-flex align-items-center justify-content-center">
-          <select class="form-select w-100 mt-2">
-            <option selected>Mustang</option>
-            <option>Ranger</option>
-            <option>Territory</option>
-            <option>Bronco Sport</option>
+          <select class="form-select w-100 mt-2 custom-option custom-select text-center">
+            <option class="custom-option" selected disabled>Selecione</option>
+            <option class="custom-option">Mustang</option>
+            <option class="custom-option">Ranger</option>
+            <option class="custom-option">Territory</option>
+            <option class="custom-option custom-select">Bronco Sport</option>
           </select>
         </div>
       </div>
@@ -64,49 +65,62 @@
 
     <div class="mt-auto">
       <div class="table-responsive d-none d-lg-block">
-        <table class="table table-bordered text-center align-middle">
-          <thead class="bg-primary text-white">
-            <tr>
-              <th scope="col">Código - Vin</th>
-              <th scope="col">Odômetro</th>
-              <th scope="col">Nível de Combustível</th>
-              <th scope="col">Status</th>
-              <th scope="col">Lat.</th>
-              <th scope="col">Long.</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="bg-white text-dark">
-              <td>2FRHDUYS2Y63NHD22454</td>
-              <td>50000 Km</td>
-              <td>90%</td>
-              <td>on</td>
-              <td>-12.2322</td>
-              <td>-35.2314</td>
-            </tr>
-          </tbody>
+        <table mat-table [dataSource]="dados" class="mat-elevation-z2 custom-mat-table">
+
+          <ng-container matColumnDef="vin">
+            <th mat-header-cell *matHeaderCellDef> Código - Vin </th>
+            <td mat-cell *matCellDef="let element" data-label="Código - Vin"> {{ element.vin }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="odometro">
+            <th mat-header-cell *matHeaderCellDef> Odômetro </th>
+            <td mat-cell *matCellDef="let element" data-label="Odômetro"> {{ element.odometro }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="combustivel">
+            <th mat-header-cell *matHeaderCellDef> Nível de Combustível </th>
+            <td mat-cell *matCellDef="let element" data-label="Nível de Combustível"> {{ element.combustivel }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="lat">
+            <th mat-header-cell *matHeaderCellDef> Lat. </th>
+            <td mat-cell *matCellDef="let element" data-label="Lat."> {{ element.lat }} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="long">
+            <th mat-header-cell *matHeaderCellDef> Long. </th>
+            <td mat-cell *matCellDef="let element" data-label="Long."> {{ element.long }} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
       </div>
 
       <div class="d-lg-none">
         <div class="border rounded p-3 mb-3 bg-white">
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
             Código - Vin
           </p>
           <p>2FRHDUYS2Y63NHD22454</p>
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
             Odômetro
           </p>
           <p>50000 Km</p>
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
             Nível de Combustível
           </p>
           <p>90%</p>
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">Status</p>
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Status</p>
           <p>on</p>
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">Lat.</p>
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Lat.</p>
           <p>-12.2322</p>
-          <p class="fw-bold bg-primary text-white px-2 py-1 rounded">Long.</p>
+          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Long.</p>
           <p>-35.2314</p>
         </div>
       </div>
