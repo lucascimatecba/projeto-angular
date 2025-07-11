@@ -1,9 +1,5 @@
-<div
-  class="container-fluid d-flex flex-column min-vh-100 p-4 dashboard-container"
->
-  <h2 class="text-primary fw-bold text-center pb-3 mb-4 fs-3">
-    Dashboard FORD
-  </h2>
+<div class="container-fluid d-flex flex-column px-4">
+  <h2 class="text-primary fw-bold text-center pb-3 mb-4 fs-3 custom">Dashboard FORD</h2>
 
   <div class="row justify-content-center g-3 mb-4 flex-wrap">
     <div class="col-6 col-md-3">
@@ -12,116 +8,93 @@
           <h3 class="custom-title pt-3">Veículo</h3>
         </div>
         <div class="card-body d-flex align-items-center justify-content-center">
-          <select class="form-select w-100 mt-2 custom-option custom-select text-center">
-            <option class="custom-option" selected disabled>Selecione</option>
-            <option class="custom-option">Mustang</option>
-            <option class="custom-option">Ranger</option>
-            <option class="custom-option">Territory</option>
-            <option class="custom-option custom-select">Bronco Sport</option>
+          <select class="form-select w-100 mt-2 text-center">
+            <option selected disabled>Selecione</option>
+            <option>Mustang</option>
+            <option>Ranger</option>
+            <option>Territory</option>
+            <option>Bronco Sport</option>
           </select>
         </div>
       </div>
     </div>
 
-    <div class="col-6 col-md-3">
+    <div class="col-6 col-md-3" *ngFor="let card of cards">
       <div class="card custom-card h-100">
         <div class="card-header text-center">
-          <h3 class="custom-title pt-3">Vendas</h3>
+          <h3 class="custom-title pt-3">{{ card.titulo }}</h3>
         </div>
         <div class="card-body">
-          <h5 class="card-title custom-number text-center">1500</h5>
-          <p class="card-text custom-text text-center">Unid.</p>
+          <h5 class="custom-number text-center">{{ card.valor }}</h5>
+          <p class="custom-text text-center">Unid.</p>
         </div>
       </div>
     </div>
 
-    <div class="col-6 col-md-3">
-      <div class="card custom-card h-100">
-        <div class="card-header text-center">
-          <h3 class="custom-title pt-3">Conectados</h3>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title custom-number text-center">500</h5>
-          <p class="card-text custom-text text-center">Unid.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-6 col-md-3">
-      <div class="card custom-card h-100">
-        <div class="card-header text-center">
-          <h3 class="custom-title pt-3">Atualizados</h3>
-        </div>
-        <div class="card-body">
-          <h5 class="card-title custom-number text-center">750</h5>
-          <p class="card-text custom-text text-center">Unid.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center mb-4 pt-3">
+    <div class="text-center mb-1 pt-1">
       <img src="../../assets/mustang.png" alt="Veículo" class="img-fluid" />
     </div>
 
-    <div class="mt-auto">
+    <!-- Campo de busca -->
+    <div class="row justify-content-center mb-3">
+      <div class="col-11">
+        <div class="input-group">
+          <span class="input-group-text custom-title-table text-white">
+            <mat-icon>search</mat-icon>
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o código VIN"
+            [(ngModel)]="codigoBusca"
+            (input)="filtrarPorVin()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela desktop -->
+    <div class="mt-1">
       <div class="table-responsive d-none d-lg-block">
-        <table mat-table [dataSource]="dados" class="mat-elevation-z2 custom-mat-table">
-
-          <ng-container matColumnDef="vin">
-            <th mat-header-cell *matHeaderCellDef> Código - Vin </th>
-            <td mat-cell *matCellDef="let element" data-label="Código - Vin"> {{ element.vin }} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="odometro">
-            <th mat-header-cell *matHeaderCellDef> Odômetro </th>
-            <td mat-cell *matCellDef="let element" data-label="Odômetro"> {{ element.odometro }} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="combustivel">
-            <th mat-header-cell *matHeaderCellDef> Nível de Combustível </th>
-            <td mat-cell *matCellDef="let element" data-label="Nível de Combustível"> {{ element.combustivel }} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef> Status </th>
-            <td mat-cell *matCellDef="let element" data-label="Status"> {{ element.status }} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="lat">
-            <th mat-header-cell *matHeaderCellDef> Lat. </th>
-            <td mat-cell *matCellDef="let element" data-label="Lat."> {{ element.lat }} </td>
-          </ng-container>
-
-          <ng-container matColumnDef="long">
-            <th mat-header-cell *matHeaderCellDef> Long. </th>
-            <td mat-cell *matCellDef="let element" data-label="Long."> {{ element.long }} </td>
-          </ng-container>
-
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <table class="table table-bordered table-hover text-center align-middle">
+          <thead class="custom-title-table">
+            <tr>
+              <th>VIN</th>
+              <th>Odômetro</th>
+              <th>Combustível</th>
+              <th>Status</th>
+              <th>Lat.</th>
+              <th>Long.</th>
+            </tr>
+          </thead>
+          <tbody class="custom-title-table">
+            <tr *ngFor="let item of dados">
+              <td>{{ item.vin }}</td>
+              <td>{{ item.odometro }}</td>
+              <td>{{ item.combustivel }}</td>
+              <td>{{ item.status }}</td>
+              <td>{{ item.lat }}</td>
+              <td>{{ item.long }}</td>
+            </tr>
+          </tbody>
         </table>
       </div>
 
+      <!-- Cartelas mobile -->
       <div class="d-lg-none">
-        <div class="border rounded p-4 mb-3 bg-white text-center custom-background-table" *ngFor="let item of dados">
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
-            Código - Vin
-          </p>
-          <p>{{item.vin}}</p>
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
-            Odômetro
-          </p>
-          <p>{{item.odometro}}</p>
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">
-            Nível de Combustível
-          </p>
-          <p>{{item.combustivel}}</p>
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Status</p>
-          <p>{{item.status}}</p>
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Lat.</p>
-          <p>-{{item.lat}}</p>
-          <p class="fw-bold custom-title-table text-white px-2 py-1 rounded">Long.</p>
-          <p>-{{item.long}}</p>
+        <div class="border rounded p-4 pb-0 bg-white text-center" *ngFor="let item of dados">
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Código - VIN</p>
+          <p>{{ item.vin }}</p>
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Odômetro</p>
+          <p>{{ item.odometro }}</p>
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Nível de Combustível</p>
+          <p>{{ item.combustivel }}</p>
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Status</p>
+          <p>{{ item.status }}</p>
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Lat.</p>
+          <p>{{ item.lat }}</p>
+          <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Long.</p>
+          <p>{{ item.long }}</p>
         </div>
       </div>
     </div>
