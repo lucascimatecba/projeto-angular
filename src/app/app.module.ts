@@ -2,6 +2,7 @@ import { MatTableModule } from '@angular/material/table';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,10 +51,13 @@ const routes: Routes = [
     DashboardComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
+
+    BrowserModule,
     BrowserAnimationsModule,
+
     FormsModule,
     ReactiveFormsModule,
 
