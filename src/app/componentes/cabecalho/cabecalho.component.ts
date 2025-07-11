@@ -1,4 +1,6 @@
+import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cabecalho',
@@ -7,6 +9,11 @@ import { Component } from '@angular/core';
 })
 export class CabecalhoComponent {
   isMenuOpen: boolean = false;
+
+  constructor(
+    private router: Router,
+    private authService: AuthService
+  ) { }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -18,9 +25,7 @@ export class CabecalhoComponent {
   }
 
   logout() {
-  // Aqui pode limpar dados, tokens etc.
-  console.log('Logout clicado');
-  // Redirecionar, por exemplo:
-  // this.router.navigate(['/login']);
+  this.authService.logout();
+  this.router.navigate(['/login']);
 }
 }
