@@ -46,6 +46,7 @@ app.get("/vehicles", (req, res) => {
         const vehicles = [
             {
                 id: 1,
+                vin: "2FRHDUYS2Y63NHD22454",
                 vehicle: "Ranger",
                 volumetotal: 145760,
                 connected: 70000,
@@ -54,6 +55,7 @@ app.get("/vehicles", (req, res) => {
             },
             {
                 id: 2,
+                vin: "2RFAASDY54E4HDU34874",
                 vehicle: "Mustang",
                 volumetotal: 1500,
                 connected: 500,
@@ -62,6 +64,7 @@ app.get("/vehicles", (req, res) => {
             },
             {
                 id: 3,
+                vin: "2FRHDUYS2Y63NHD22455",
                 vehicle: "Territory",
                 volumetotal: 4560,
                 connected: 4000,
@@ -70,6 +73,7 @@ app.get("/vehicles", (req, res) => {
             },
             {
                 id: 4,
+                vin: "2RFAASDY54E4HDU34875",
                 vehicle: "Bronco Sport",
                 volumetotal: 7560,
                 connected: 4060,
