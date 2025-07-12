@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
-import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -24,7 +23,6 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   declarations: [
     AppComponent,
     CabecalhoComponent,
-    RodapeComponent,
     LoginComponent,
     HomeComponent,
     DashboardComponent,
