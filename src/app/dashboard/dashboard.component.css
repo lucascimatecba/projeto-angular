@@ -48,6 +48,12 @@
   padding: 0.5rem;
 }
 
+.img-custom {
+    max-height: 480px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
 @media (max-width: 768px) {
   .custom-title {
     font-size: 17px;
