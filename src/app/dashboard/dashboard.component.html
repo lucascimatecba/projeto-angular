@@ -9,11 +9,17 @@
         </div>
         <form [formGroup]="selectCarForms">
           <div class="card-body d-flex align-items-center justify-content-center">
-          <select class="form-select w-100 mt-2 text-center" formControlName="carId">
-            <option value="" selected disabled>Selecione</option>
-            <option *ngFor="let v of vehicles" [value]="v.id">{{ v.vehicle }}</option>
-          </select>
-        </div>
+            <select
+              class="form-select w-100 mt-2 text-center"
+              formControlName="carId"
+              (click)="limparCampoVin()"
+            >
+              <option value="" disabled selected>Selecione</option>
+              <option *ngFor="let v of vehicles" [value]="v.id">
+                {{ v.vehicle }}
+              </option>
+            </select>
+          </div>
         </form>
       </div>
     </div>
@@ -51,6 +57,9 @@
             type="text"
             class="form-control"
             placeholder="Digite o código VIN"
+            [(ngModel)]="vinDigitado"
+            name="vin"
+            (keyup.enter)="buscarPorVin()"
           />
         </div>
       </div>
