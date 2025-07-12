@@ -22,16 +22,16 @@ export class LoginComponent {
     private authService: AuthService
   ) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
+      nome: ['', [Validators.required, Validators.minLength(3)]],
       senha: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
 
   onSubmit() {
     if (this.loginForm.valid) {
-      const {email, senha} = this.loginForm.value;
+      const {nome, senha} = this.loginForm.value;
 
-      this.loginService.login(email, senha).subscribe({
+      this.loginService.login(nome, senha).subscribe({
         next: (usuario) => {
           this.authService.setUsuario(usuario);
           this.router.navigate(['/home']);

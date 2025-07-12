@@ -13,17 +13,17 @@ app.use(express.static(path.join(__dirname)));
 app.post("/login", async (req, res) => {
     try {
 
-        const { email, senha } = req.body
+        const { nome, senha } = req.body
 
-        if (!email || !senha) {
+        if (!nome || !senha) {
             return res.status(400).json({
                 message: "O campo de usuário ou senha não foi preenchido!"
             });
         }
 
-        if (email !== "admin@email.com" || senha !== "123456") {
+        if (nome !== "admin" || senha !== "123456") {
             return res.status(401).json({
-                message: "O email de usuário ou senha está incorreto ou não foi cadastrado!"
+                message: "O nome de usuário ou senha está incorreto ou não foi cadastrado!"
             });
         }
 
