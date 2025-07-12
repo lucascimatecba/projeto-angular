@@ -1,18 +1,24 @@
+<!-- Layout principal do login com imagem à esquerda e formulário à direita -->
 <div class="container-fluid text-center">
   <div class="row d-flex flex-column flex-lg-row min-vh-100 justify-content-center">
 
+    <!-- Imagem do veículo (visível em telas grandes) -->
     <div class="col-12 col-lg-6 d-flex align-items-center justify-content-center d-none d-lg-flex">
       <img class="w-100 img-fluid mt-md-3" src="../../assets/ranger.png" alt="ford ranger">
     </div>
 
+    <!-- Coluna com logo e formulário de login -->
     <div class="col-12 col-lg-6 d-flex flex-column login-custom">
       <div class="top-logo-container justify-content-center">
         <img class="w-25 img-fluid mb-md-3 pt-5 logo-custom" src="../../assets/ford.png" alt="logo da ford">
       </div>
+
+      <!-- Formulário de autenticação -->
       <div class="form-wrapper d-flex flex-grow-1 align-items-center justify-content-center pb-5">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-custom">
           <h1 class="h1 mb-4">Boas vindas</h1>
 
+          <!-- Campo de usuário -->
           <div class="mb-3">
             <mat-form-field appearance="outline" class="w-100 rounded-form-field">
               <mat-icon matPrefix>person</mat-icon>
@@ -21,6 +27,7 @@
             </mat-form-field>
           </div>
 
+          <!-- Campo de senha com botão de visualização -->
           <div class="mb-3">
             <mat-form-field appearance="outline" class="w-100 rounded-form-field">
               <mat-icon matPrefix>lock</mat-icon>
@@ -30,11 +37,14 @@
                 <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
               </button>
             </mat-form-field>
+
+            <!-- Exibe mensagem de erro se houver -->
             <div *ngIf="mensagemErro" class="text-danger">
               {{ mensagemErro }}
             </div>
           </div>
 
+          <!-- Botão de envio -->
           <button mat-raised-button color="primary" class="col-12 p-4" type="submit" [disabled]="loginForm.invalid">
             Entrar
           </button>

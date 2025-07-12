@@ -1,3 +1,4 @@
+<!-- Barra de navegação superior com botão de menu e logout -->
 <nav class="navbar">
   <div class="container-fluid">
     <button class="navbar-toggler me-auto" type="button" (click)="toggleMenu()" aria-controls="sidebarMenu" [attr.aria-expanded]="isMenuOpen ? 'true' : 'false'" aria-label="Toggle navigation">
@@ -11,6 +12,7 @@
   </div>
 </nav>
 
+<!-- Menu lateral com links de navegação -->
 <div class="sidebar-menu" [class.active]="isMenuOpen" id="sidebarMenu">
 
   <div class="sidebar-header">
@@ -27,4 +29,5 @@
   </ul>
 </div>
 
+<!-- Sobreposição para fechar o menu ao clicar fora -->
 <div class="overlay" [class.active]="isMenuOpen" (click)="toggleMenu()"></div>
