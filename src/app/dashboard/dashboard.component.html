@@ -15,7 +15,6 @@
             <select
               class="form-select w-100 mt-2 text-center"
               formControlName="carId"
-              (click)="limparCampoVin()"
             >
               <option value="" disabled selected>Selecione</option>
               <option *ngFor="let v of vehicles" [value]="v.id">
@@ -46,31 +45,34 @@
         <img [src]="selectedVehicle.img" alt="Imagem do Veículo" class="img-fluid" />
       </ng-container>
       <ng-template #mustangDefault>
-        <img src="http://localhost:3001/img/mustang.png" alt="Imagem Mustang" class="img-custom"/>
+        <img src="../../assets/logo-ford-dashboard.png" alt="Imagem Mustang" class="img-custom"/>
       </ng-template>
     </div>
 
     <!-- Campo de busca -->
-    <div class="row justify-content-center mb-3">
-      <div class="col-11">
+    <form [formGroup]="vinForm" class="row justify-content-center mb-3">
+      <div class="col-12">
         <div class="input-group">
           <span class="input-group-text custom-title-table text-white">
             <mat-icon>search</mat-icon>
           </span>
           <input
+            formControlName="vin"
             type="text"
             class="form-control"
             placeholder="Digite o código VIN"
-            [(ngModel)]="vinDigitado"
-            name="vin"
-            (keyup.enter)="buscarPorVin()"
           />
         </div>
+
+        <!-- Mensagem de VIN inválido -->
+        <div class="text-danger mt-2 text-center" *ngIf="vinInvalido">
+          VIN não encontrado!
+        </div>
       </div>
-    </div>
+    </form>
 
     <!-- Tabela desktop -->
-    <div class="mt-1" *ngIf="vehicleData">
+    <div class="mt-1">
       <div class="table-responsive d-none d-lg-block">
         <table class="table table-bordered table-hover text-center align-middle">
           <thead class="custom-title-table">
@@ -85,12 +87,12 @@
           </thead>
           <tbody class="custom-title-table">
             <tr>
-              <td>{{ selectedVehicle.vin }}</td>
-              <td>{{ vehicleData.odometro }}</td>
-              <td>{{ vehicleData.nivelCombustivel }}</td>
-              <td>{{ vehicleData.status }}</td>
-              <td>{{ vehicleData.lat }}</td>
-              <td>{{ vehicleData.long }}</td>
+              <td>{{ vinForm.controls.vin.value || '-' }}</td>
+              <td>{{ vehicleData ? vehicleData.odometro : '-' }}</td>
+              <td>{{ vehicleData ? vehicleData.nivelCombustivel + '%' : '-' }}</td>
+              <td>{{ vehicleData ? vehicleData.status : '-' }}</td>
+              <td>{{ vehicleData ? vehicleData.lat : '-' }}</td>
+              <td>{{ vehicleData ? vehicleData.long : '-' }}</td>
             </tr>
           </tbody>
         </table>
@@ -100,17 +102,17 @@
       <div class="d-lg-none">
         <div class="border rounded p-4 pb-0 bg-white text-center">
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Código - VIN</p>
-          <p>{{ selectedVehicle.vin }}</p>
+          <p>{{ vinForm.controls.vin.value || '-' }}</p>
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Odômetro</p>
-          <p>{{ vehicleData.odometro }}</p>
+          <p>{{ vehicleData ? vehicleData.odometro : '-' }}</p>
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Nível de Combustível</p>
-          <p>{{ vehicleData.nivelCombustivel }}</p>
+          <p>{{ vehicleData ? vehicleData.nivelCombustivel + '%' : '-' }}</p>
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Status</p>
-          <p>{{ vehicleData.status }}</p>
+          <p>{{ vehicleData ? vehicleData.status : '-' }}</p>
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Lat.</p>
-          <p>{{ vehicleData.lat }}</p>
+          <p>{{ vehicleData ? vehicleData.lat : '-' }}</p>
           <p class="fw-bold text-white custom-title-table px-2 py-1 rounded">Long.</p>
-          <p>{{ vehicleData.long }}</p>
+          <p>{{ vehicleData ? vehicleData.long : '-' }}</p>
         </div>
       </div>
     </div>
