@@ -49,7 +49,7 @@
 }
 
 .img-custom {
-    max-height: 480px;
+    max-height: 420px;
     max-width: 100%;
     object-fit: contain;
   }
